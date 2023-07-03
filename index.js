@@ -15,21 +15,17 @@ const monster = {
 }
 
 function renderCharacter(data){
-document.getElementById(data.elementId).innerHTML = `
-    <div class="character-card">
-        <h4 class="name"> ${data.name} </h4>
-        <img class="avatar" src="${data.avatar}"/>
-        <p class="health">health: <b> ${data.health} </b></p>
-        <div class="dice-container">
-            <div class="dice"> ${data.diceRoll} </div>
-        </div>
-    </div>   
-`
-/*
-Challenge:
-    1. Make renderCharacter render out the character 
-       from the object it is passed.
-*/
+    const {elementId, name, avatar, health, diceRoll} = data
+    document.getElementById(elementId).innerHTML = `
+        <div class="character-card">
+            <h4 class="name"> ${name} </h4>
+            <img class="avatar" src="${avatar}"/>
+            <p class="health">health: <b> ${health} </b></p>
+            <div class="dice-container">
+                <div class="dice"> ${diceRoll} </div>
+            </div>
+        </div>   
+    `
 }
 
 renderCharacter(hero)
